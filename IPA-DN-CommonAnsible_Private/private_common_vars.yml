@@ -20,7 +20,7 @@ common_resolv_conf_contents: "{{ resolv_conf_contents | default(common_resolv_co
 common_syslog_server: "{{ syslog_server | default(common_syslog_server_default, true) }}"
 
 
-# sudo 権限のある管理者ユーザー 'jimucho' のパスワード
+# sudo 権限のある管理者ユーザー 'dummyuser1' のパスワード
 # (prepare playbook で作成するための情報)
 # python3 -c 'import crypt; print(crypt.crypt("********", crypt.mksalt(crypt.METHOD_SHA512)))' で生成
 # このパスワードハッシュ自体は git などで共有しても安全
