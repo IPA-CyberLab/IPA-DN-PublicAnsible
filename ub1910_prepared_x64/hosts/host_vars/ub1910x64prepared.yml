@@ -35,7 +35,7 @@ run_host_specific_tasks: false
 #   - 3.yml
 
 ### For Raspberry Pi hosts
-host_apt_sources_base_url: http://ossvault.open.ad.jp/vault/oss/20031301_ubuntu_1910_eoan_i386_amd64/
+host_apt_sources_base_url: http://ossvault.open.ad.jp/vault/oss/20032001_ubuntu_1910_eoan_i386_amd64/
 
 ### for ub1910x64prepared
 do_not_add_admin_user: true
