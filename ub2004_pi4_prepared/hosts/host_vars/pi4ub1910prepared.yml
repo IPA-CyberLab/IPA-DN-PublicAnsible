@@ -1,0 +1,47 @@
+eth_settings: |
+  # SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:11:22:33:44:55", ATTR{type}=="1", KERNEL=="eth*", NAME="ethlan"
+ip_settings: |
+  auto lo
+  iface lo inet loopback
+  auto eth0
+  iface eth0 inet dhcp
+ip_settings_prepare_tmp: |
+  auto lo
+  iface lo inet loopback
+  auto eth0
+  iface eth0 inet dhcp
+resolv_conf_contents: |
+  # for test environment !!
+  domain mg.open.ad.jp
+  nameserver 8.8.8.8
+  nameserver 8.8.4.4
+network_boottime_1: |
+  nic_disable_offload eth0
+network_boottime_2: |
+  # none
+network_static_routes: |
+  # ip -4 route add 10.0.0.0/8 via 10.21.255.254
+  # ip -4 route add 192.168.0.0/16 via 10.21.255.254
+  # ip -4 route add 172.16.0.0/12 via 10.21.255.254
+network_iptables_rules: |
+  # none
+disable_ipv6_all: false
+#hdd_partition_type: vmdata1_sdb
+skip_common_linux: false
+run_host_specific_tasks: false
+# additional_tasks:
+#   - 1.yml
+#   - 2.yml
+#   - 3.yml
+
+### For Raspberry Pi hosts
+prepare_skip_add_grub_params: true
+host_apt_sources_base_url: http://ossvault.open.ad.jp/vault/oss/20122303_ubuntu_2004_focal_armhf_arm64_ppc64el/
+snmp_temperature_script_name: files/scripts/se_snmp_temperature_raspi.sh
+
+### for ub2004_pi4_prepared
+do_not_add_admin_user: true
+do_not_delete_user1: true
+delete_user_ubuntu: true
+prepare_allow_ssh_password_auth: true
+
