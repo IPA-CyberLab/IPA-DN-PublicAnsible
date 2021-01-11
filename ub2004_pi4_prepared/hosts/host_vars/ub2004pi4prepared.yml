@@ -24,7 +24,12 @@ network_static_routes: |
   # ip -4 route add 192.168.0.0/16 via 10.21.255.254
   # ip -4 route add 172.16.0.0/12 via 10.21.255.254
 network_iptables_rules: |
-  # none
+  iptables -A INPUT -p udp -s 10.0.0.0/8 -m multiport --dports 161 -j ACCEPT
+  iptables -A INPUT -p udp -s 172.16.0.0/12 -m multiport --dports 161 -j ACCEPT
+  iptables -A INPUT -p udp -s 192.168.0.0/16 -m multiport --dports 161 -j ACCEPT
+  iptables -A INPUT -p udp -s 127.0.0.0/8 -m multiport --dports 161 -j ACCEPT
+  iptables -A INPUT -p udp -m multiport --dports 161 -j DROP
+  ip6tables -A INPUT -p udp -m multiport --dports 161 -j DROP
 disable_ipv6_all: false
 #hdd_partition_type: vmdata1_sdb
 skip_common_linux: false
@@ -44,4 +49,5 @@ do_not_add_admin_user: true
 do_not_delete_user1: true
 delete_user_ubuntu: true
 prepare_allow_ssh_password_auth: true
+snmpwork_install: true
 
