@@ -41,7 +41,7 @@ run_host_specific_tasks: false
 
 ### For Raspberry Pi hosts
 prepare_skip_add_grub_params: true
-host_apt_sources_base_url: http://ossvault.open.ad.jp/vault/oss/20122303_ubuntu_2004_focal_armhf_arm64_ppc64el/
+host_apt_sources_base_url: http://ossvault.open.ad.jp/vault/oss/21020703_ubuntu_2004_focal_armhf_arm64_ppc64el/
 snmp_temperature_script_name: files/scripts/se_snmp_temperature_raspi.sh
 
 ### for ub2004_pi4_prepared

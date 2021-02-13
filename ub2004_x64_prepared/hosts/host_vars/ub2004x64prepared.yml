@@ -41,7 +41,7 @@ run_host_specific_tasks: false
 
 
 prepare_skip_add_grub_params: false
-host_apt_sources_base_url: http://ossvault.open.ad.jp/vault/oss/20122302_ubuntu_2004_focal_i386_amd64/
+host_apt_sources_base_url: http://ossvault.open.ad.jp/vault/oss/21020702_ubuntu_2004_focal_i386_amd64/
 snmp_temperature_script_name: files/scripts/se_snmp_temperature.sh
 
 ### for ub2004_x64_prepared
